@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +7,70 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvHeight"
+        style="@style/tvStyle"
+        android:text="Your Height:"
+        />
+    <EditText
+        android:id="@+id/etHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvHeight"
+        android:hint="(centimeters)"
+        android:gravity="center"
+        />
+    <!--<TextView-->
+    <!--android:id="@+id/tvCm"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:layout_below="@+id/etHeight"-->
+    <!--android:layout_toRightOf="@+id/tvWeight"-->
+    <!--android:text="(centimeters)"-->
+    <!--/>-->
+    <TextView
+        android:id="@+id/tvWeight"
+        style="@style/tvStyle"
+        android:text="Your Weight:"
+        android:layout_below="@+id/tvHeight"
+        />
+    <EditText
+        android:id="@+id/etWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etHeight"
+        android:layout_toRightOf="@+id/tvHeight"
+        android:hint="(kilograms)"
+        android:gravity="center"
+        />
+    <!--<TextView-->
+    <!--android:id="@+id/tvKg"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:layout_below="@+id/etWeight"-->
+    <!--android:layout_toRightOf="@+id/tvWeight"-->
+    <!--android:text="(kilograms)"-->
+    <!--/>-->
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/btnCalc"
+        android:layout_below="@+id/etWeight"
+        android:layout_toRightOf="@+id/tvWeight"
+        android:text="Compute BMI"
+        />
+    <TextView
+        android:id="@+id/labelBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your BMI:"
+        android:layout_centerInParent="true"
+        />
+    <EditText
+        android:id="@+id/tvBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:layout_below="@+id/labelBMI"
+        android:layout_centerInParent="true"
+        />
+</RelativeLayout>
