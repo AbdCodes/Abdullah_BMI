@@ -26,7 +26,9 @@ public class Abdullah_BMI {
     public double calcBMI()
     {
 
-        double BMI = weight/(height*height/100);
+        double BMI = (weight/height/height)*10000;
         return BMI;
+
+
     }
 }

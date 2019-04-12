@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +46,22 @@ public class MainActivity extends AppCompatActivity {
                 Abdullah_BMI Result = new Abdullah_BMI(etHeight1, etWeight2);
                 double myBMI = Result.calcBMI();
                 tvBMI.setText(Double.toString(myBMI));
+
+                if (myBMI <18.5){
+                    Toast.makeText(MainActivity.this,"Underweight",Toast.LENGTH_LONG).show();
+                }
+                else if(myBMI>18.5 && myBMI<=24.9){
+                    Toast.makeText(MainActivity.this,"Normal Weight",Toast.LENGTH_LONG).show();
+
+                }
+                else if(myBMI>25 && myBMI<=29.9){
+                    Toast.makeText(MainActivity.this,"OverWeight",Toast.LENGTH_LONG).show();
+
+                }
+                else{
+                    Toast.makeText(MainActivity.this,"Obesity",Toast.LENGTH_LONG).show();
+
+                }
             }
         });
     }
